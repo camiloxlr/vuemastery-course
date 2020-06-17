@@ -1,0 +1,68 @@
+<html>
+
+<head>
+
+    <title>Product App</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="nav-bar"></div>
+
+    <div id="app">
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <img :src="image" alt="">
+                <!-- <img v-bind:src="image" alt=""> -->
+
+            </div>
+
+            <div class="product-info">
+
+                <h2>{{ product }}</h2>
+
+                <p v-if="renderTheFirst">Learning Vue</p>
+
+                <p v-else>Conditional Rendering</p>
+
+                <p v-if="value > 50">Checking Value</p>
+
+                <p v-show="showParagraph">v-show sets display property</p>
+
+                <a :href="link" target="_blank">Go to Google</a>
+
+                <ul>
+                    <li v-for="detail in details">{{ detail }}</li>
+                </ul>
+
+                <div v-for="variant in variants" :key="variant.variantId">
+                    <p @mouseover="updateProduct(variant.variantImage)">
+                        {{ variant.variantColor }}
+                    </p>
+                </div>
+
+                <button v-on:click="addToCart">Add to Cart</button>
+
+                <div class="cart">
+                    <p>Cart ({{ cart }})</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div> 
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
